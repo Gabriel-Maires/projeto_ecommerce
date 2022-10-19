@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/autenticacao.css' %}">
+{% endblock %}
+
+
+{% block 'title' %}Cadastre-se{% endblock %}
+
+
+{% block 'body' %}
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-3 sidebar">
+<div class="logo_sidebar">
+<h2 class="logo">
+
+  
+</h2>
+</div>
+<div class="corpo_sidebar">
+<div>
+<h2 class="titulo cor_branca">Cadastre-se</h2>
+</div>
+<br>
+
+<br>
+<div>
+<p class="cor_branca descricao">Venha fazer parte da nossa família.</p>
+<p style="margin-top:-20px" class="cor_branca descricao">Os melhores preços estão aqui.</p>
+<br>
+<br>
+
+<a class="btn_logar" href="{% url 'login'%}">LOGAR</a>
+
+</div>
+</div>
+</div>
+<div class="col-md-9">
+<div class="area_cadastrar">
+<form action="{% url 'cadastro'%}" method="post">{% csrf_token %}
+<h2 class="titulo_area_cadastrar">Cadastre-se</h2>
+<br>
+<br>
+<br>
+{% if messages%}
+    {% for i in messages%}
+        <div style="width: 800px ; margin-bottom: 25px; padding-top: 3px; padding-bottom: 3px;  margin-top: 6px; border-radius: 15px; margin-left: 30%;" class="alert {{i.tags}}" role="alert">
+            {{i}}
+          
+        </div>
+    {% endfor%}
+{%endif%}
+
+<input name="username" class="input_cadastrar input_cadastrar_nome" type="text" placeholder="Username...">
+
+<br>
+<br>
+<input name="email" class="input_cadastrar input_cadastrar_email" type="text" placeholder="Email...">
+<br>
+<br>
+<input name="senha" class="input_cadastrar input_cadastrar_senha" type="password" placeholder="Senha...">
+<br>
+<br>
+<input style="border-radius:15px ;" name="repetir_senha" class="input_cadastrar input_cadastrar_senha" type="password" placeholder="Senha novamente...">
+<br>
+
+
+
+
+<hr style="width: 700px ;">
+<p class="titulo_area_cadastrarr">Dados obrigatórios:</p>
+
+
+<input style="border-radius:15px ;" name="sobrenome" class="input_cadastrar input_cadastrar_senha" type="text" placeholder="Sobrenome completo...">
+<br>
+<br>
+<input style="border-radius:15px ;" name="cpf" class="input_cadastrar input_cadastrar_senha" type="number" placeholder="CPF...">
+<br>
+<br>
+<input style="border-radius:15px ;" name="cep" class="input_cadastrar input_cadastrar_senha" type="number" placeholder="Cep...">
+<br>
+<br>
+<input style="border-radius:15px ;" name="numero" class="input_cadastrar input_cadastrar_senha" type="number" placeholder="número...">
+<br>
+<br>
+<input style="border-radius:15px ;" name="telefone" class="input_cadastrar input_cadastrar_senha" type="number" placeholder="telefone...">
+
+<br>
+<br>
+
+<input style="border-radius:15px ;" name="data_nascimento" class="input_cadastrar input_cadastrar_senha" type="date" placeholder="Data de nascimento...">
+
+<br>
+
+<br>
+<input style="margin-top: -0px;" class="btn_cadastrar" type="submit" value="Cadastrar">
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

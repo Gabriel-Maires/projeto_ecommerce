@@ -1,0 +1,118 @@
+.title-principal{
+    padding-top: 15px;
+    font-family: 'Roboto Slab', serif; 
+
+}
+
+.title-principal-confira{
+    padding-top: 50px;
+    font-family: 'Roboto Slab', serif; 
+
+}
+
+.div-conteudo-recuperar{
+
+    background-color:#3099cd;
+    color: white;
+    height: 218px;
+    width: 560px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
+
+}
+
+.div-conteudo-email{
+
+    background-color:#3099cd;
+    color: white;
+    height: 270px;
+    width: 560px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
+
+}
+
+body{
+
+    background-color: #e2e0e0;
+}
+
+.div-conteudop{
+
+    background-color:#3099cd;
+    color: white;
+
+}
+
+.bloco-central {
+    margin: 0 auto;
+    border-radius: 15px;
+ 
+}
+
+.central-input{
+    margin: 0 auto;
+}
+
+.config-global{
+    margin-top: 13%;
+
+}
+
+.paragrafo{
+    margin-top: -35px;
+}
+
+.redefinicao{
+
+    background-color:#3099cd;
+    color: white;
+    height: 445px;
+    width: 600px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
+}
+
+#id_new_password1{
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+}
+#id_new_password2{
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+   
+
+}
+
+ul{
+    margin-left: 2px;
+}
+
+#id_email{
+    height: 30px;
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+
+
+}
+
+
+#id_new_password1{
+    width: 520px;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    margin-bottom: 10px;
+
+}
+#id_new_password2{
+    width: 520px;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    margin-bottom: 10px;
+}
