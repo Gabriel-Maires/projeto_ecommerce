@@ -13,8 +13,9 @@ def homepage(request):
 
 def produto(request, id):
     if Produto.objects.filter(id=id):
+        categoria = Categoria.objects.all()
         produto = Produto.objects.filter(id=id)
-        context = {"produto": produto}
+        context = {"produto": produto, "categoria": categoria}
         return render(request, 'produto.html', context)
     else:
         return redirect('/')
