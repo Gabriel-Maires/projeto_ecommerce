@@ -1,19 +1,5 @@
-{% extends 'base.html' %}
+{% extends 'base_produto.html' %}
 {% load static %}
-
-
-{% block header %}
-    <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-            </div>
-        </div>
-    </header>
- 
-{% endblock header %}
 
 {% block produtos %}
 <section class="py-5">
@@ -23,12 +9,12 @@
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="{{i.foto.url}}" alt="..." />
+                    <img class="card-img-top" src="{{i.foto.url}}" alt="..." href="{% url 'produto' i.id %}"/>
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">{{i.nome}}</h5>
+                            <h5 class="fw-bolder"> <a href="{% url 'produto' i.id %}">{{i.nome}}</a></h5>
                             <!-- Product reviews-->
                             <div class="d-flex justify-content-center small text-warning mb-2">
                                 <div class="bi-star-fill"></div>
