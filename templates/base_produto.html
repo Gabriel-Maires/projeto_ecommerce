@@ -1,13 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Ecommerce</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -32,7 +31,7 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categorias' %}">Todas as Categorias</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
@@ -54,8 +53,8 @@
     </nav>
     {% endblock navbar %}
 
-{% block header %}
-{% endblock header %}
+    {% block page_categorias %}
+    {% endblock page_categorias%}
 
     {% block produtos %}
 

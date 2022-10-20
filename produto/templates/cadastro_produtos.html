@@ -1,0 +1,73 @@
+{% include 'base_produto.html' %}
+
+{% block cadastrodeprodutos %}
+<div class="container" style="width: 400px;">
+    <form method="POST" action="{% url 'cadastro_produtos' %}"> {% csrf_token %}
+        <!-- Name input -->
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Nome</label>
+            <input type="text" class="form-control" name='nome'/>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form4Example2">Foto</label>
+            <input type="file" class="form-control" accept="image/*" name='foto'/>
+        </div>
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form4Example3">Descrição</label>
+            <textarea class="form-control" name='descricao' rows="4"></textarea>
+
+        </div>
+
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Preço</label>
+            <input type="text" class="form-control" name="preco"/>
+        </div>
+
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Importado?</label>
+            <input class="form-check-input me-2" type="checkbox" name="importado" />
+        </div>
+
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Estoque Atual</label>
+            <input type="number" class="form-control" name="estoque_atual"/>
+        </div>
+
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Estoque Mínimo</label>
+            <input type="number" class="form-control" name="estoque_min"/>
+        </div>
+
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Data</label>
+            <input type="date"  class="form-control" name="data"/>
+        </div>
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Categorias</label>
+            <select type='text' class="form-control" name="categoria">
+                {% for i in categorias %}
+                <option>{{i.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+
+        <div class="form-outline mb-2">
+            <label class="form-label" for="form4Example1">Tamanhos</label>
+            <select  class="form-control" name="tamanho">
+                {% for i in tamanhos %}
+                <option>{{i.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Submit button -->
+        <input type="submit" class="btn btn-primary btn-block mb-4"></input>
+    </form>
+</div>
+
+
+{% endblock cadastrodeprodutos %}
+

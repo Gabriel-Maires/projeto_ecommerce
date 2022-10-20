@@ -8,6 +8,8 @@ migrations/
 # C extensions
 *.so
 
+*.drawio
+
 # Distribution / packaging
 .Python
 build/

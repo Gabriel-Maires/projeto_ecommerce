@@ -22,12 +22,12 @@ class Produto(models.Model):
     foto = models.ImageField()
     descricao = models.TextField()
     preco = models.DecimalField(decimal_places=2, max_digits=100000000)
-    importado = models.BooleanField(default=False)
+    importado = models.BooleanField(default=False, blank=True, null=True)
     estoque_atual = models.IntegerField()
     estoque_min = models.IntegerField(blank=True)
     data = models.DateField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    avaliacao = models.IntegerField(blank=True)
+    avaliacao = models.IntegerField(blank=True, null=True)
     tamanho = models.ForeignKey(Tamanho, on_delete=models.DO_NOTHING, blank=True)
 
     def __str__(self):
