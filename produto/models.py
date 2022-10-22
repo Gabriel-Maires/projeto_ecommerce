@@ -17,17 +17,27 @@ class Tamanho(models.Model):
         return self.nome
 
 
+class Avaliacao(models.Model):
+    titulo = models.CharField(max_length=100)
+    descricao_avaliacao = models.TextField()
+    nota_avaliacao = models.IntegerField()
+    avaliacao_respondida = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.titulo
+
+
 class Produto(models.Model):
     nome = models.CharField(max_length=150, unique=True)
     foto = models.ImageField()
     descricao = models.TextField()
     preco = models.DecimalField(decimal_places=2, max_digits=100000000)
-    importado = models.BooleanField(default=False, blank=True, null=True)
+    importado = models.BooleanField(default=False, null=True)
     estoque_atual = models.IntegerField()
     estoque_min = models.IntegerField(blank=True)
     data = models.DateField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    avaliacao = models.IntegerField(blank=True, null=True)
+    avaliacao = models.ForeignKey(Avaliacao, on_delete=models.DO_NOTHING, blank=True, null=True)
     tamanho = models.ForeignKey(Tamanho, on_delete=models.DO_NOTHING, blank=True)
 
     def __str__(self):

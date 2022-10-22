@@ -52,6 +52,12 @@ def categorias(request):
     return render(request, 'categorias.html', context)
 
 
+def avaliacao(request):
+    if request.method == "GET":
+        return render(request, 'avaliacao_produto.html')
+    elif request.method == "POST":
+        pass
+
 def collectionsview(request, nome):
     if Categoria.objects.filter(nome=nome):
         produtos = Produto.objects.filter(nome=nome)
