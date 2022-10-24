@@ -1,11 +1,27 @@
+from django.shortcuts import render
+from .models import Produto
 from django.shortcuts import redirect, render
-
 from .models import Categoria, Produto
 
 
 # Create your views here.
 def homepage(request):
     produto = Produto.objects.all()
+    return render(request, 'produto_page.html', {"produto": produto})
+
+
+#Gerenciamento do carrinho
+def cart_home(request):
+    cart_id=request.session.get('Cart_id',None)
+    if cart_id is None:
+        print('Create New Cart')
+        # precisa deixar dinamico
+        request.session['cart_id']=123
+    else:
+        print('Cart ID exist')
+        return render(request, 'cart/home.html', {})
+      
+    # precisa melhorar
     categoria = Categoria.objects.all()
     context = {"produto": produto, "categoria": categoria}
     return render(request, 'homepage.html', context)
